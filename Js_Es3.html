@@ -3,7 +3,7 @@
         <title>JS ES 3</title>
     </head>
     <body>
-        <h1>Js Es 2</h1>
+        <h1>Js Es 3</h1>
         <h2>Simple calculator</h2>
 
         <style>
@@ -11,22 +11,68 @@
               border:1px solid black;
             }
         </style>
-        
-            <table style="width:100%">
-              <tr>
-                <td>a</td>
-              </tr>
-            </table>
 
-        <input id='in1'></input>
         <div id="div1"></div>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+
+            <table>
+              <tr>
+                <td>N1</td>
+                <td>Segno</td>
+                <td>N2</td>
+                <td>Ris</td>
+              </tr>
+            </table>
+            <br>
+
+            Numero1: <input type="number" id="num1" name="num1"><br><br>
+            Numero2: <input type="number" id="num2" name="num2"><br><br>
+
+            <button id='btn1'>+</button>
+            <button id='btn2'>-</button>
+            <button id='btn3'>*</button>
+            <button id='btn4'>/</button><br><br>
+            
         <script>
-            $("body")
-            .append($("<button id='btn1'>Click</button>")
-            .click(function() {
-                $("table").append($("input").val())    ;
-            }));
+            $("#btn1").click(function(){
+                calcolo("+");
+            })
+            $("#btn2").click(function(){
+                calcolo("-");
+            })
+            $("#btn3").click(function(){
+                calcolo("*");
+            })
+            $("#btn4").click(function(){
+                calcolo("/");
+            }) 
+
+            function calcolo(segno) {
+                var num1 = parseInt($("#num1").val());  
+                var num2 = parseInt($("#num2").val());
+                var ris;
+                switch(segno){
+                    case "+":
+                        ris = num1 + num2;
+                    break;
+                    case "-":
+                        ris = num1 - num2;
+                    break;
+                    case "*":
+                        ris = num1 * num2;
+                    break;
+                    case "/":
+                        ris = num1 / num2;
+                    break;
+                }
+
+                $("table").append("<tr>"+ "<td>"+num1+"</td>"
+                                        + "<td>"+segno+"</td>"
+                                        + "<td>"+num2+"</td>"
+                                        + "<td>"+ris+"</td>"
+                                        +"</tr>");
+                
+            }
         </script>
     </body>
 </html>
