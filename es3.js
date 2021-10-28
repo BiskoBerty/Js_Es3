@@ -29,10 +29,8 @@ function calcolo(segno) {
             ris = num1 / num2;
         break;
     }
-
-    $("table").append("<tr>"+ "<td>"+num1+"</td>"
-                            + "<td>"+segno+"</td>"
-                            + "<td>"+num2+"</td>"
-                            + "<td>"+ris+"</td>"
-                            +"</tr>");
+if($("#num1").val()){
+    $("table").append("<tr><td>"+num1+"</td><td style='text-align:center'>"+segno+"</td><td>"+num2+"</td><td>"+ris+"</td></tr>");
+}
+    
 }
