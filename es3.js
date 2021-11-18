@@ -1,8 +1,7 @@
     var storage = window.localStorage;
+    // localStorage.clear();
+        $("table").append(localStorage.getItem("tabella"));  
     
-    for (let index = 0; index < localStorage.length; index++) {
-        $("table").append(localStorage.getItem(index));  
-    }
     
 
 $("#btn1").click(function(){
@@ -40,7 +39,10 @@ function calcolo(segno) {
     
 if($("#num1").val()){
     $("table").append(string);
-    localStorage.setItem(localStorage.length,string);
+    var tabella = localStorage.getItem("tabella");
+    localStorage.clear();
+    localStorage.setItem("tabella", tabella + string);
 }
-    
+    $("#num1").val("");
+    $("#num2").val("");
 }
